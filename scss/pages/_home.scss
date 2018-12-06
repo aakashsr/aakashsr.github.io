@@ -1,0 +1,314 @@
+.section-about {
+    background-color: $color-white;
+    padding: 25rem 0;
+    margin-top: -25vh;
+
+    &__content {
+        max-width: 114rem;
+        margin: 0 auto;
+        display: flex;
+
+
+        &--text {
+            padding: 2rem;
+            flex-basis: 50%;
+            flex-direction: column;
+            display: flex;
+            align-items: start;
+            justify-content: space-evenly;
+        }
+
+        &--photo {
+            flex-basis: 50%;
+        }
+
+        @include respond(tab-land) {
+            max-width: 94rem;
+        }
+
+        @include respond(tab-port) {
+            padding: 20rem 0;
+            max-width: 80rem;
+        }
+    }
+}
+
+
+.section-features {
+    padding: 20rem 0;
+    margin-top: -10rem;
+
+
+    background-color: #edeeef;
+    //     rgba($color-primary-light, 0.803),
+    //     rgba($color-primary-dark, 0.803)),
+    //     url('../img/nat-4.jpg');
+    // background-size: cover;
+
+    transform: skewY(-7deg);
+
+    &>* {
+        transform: skewY(7deg);
+    }
+
+    &__container {
+        max-width: 94rem;
+        margin: 0 auto;
+
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    }
+
+    &__box {
+        width: 30%;
+        float: left;
+
+        &:not(:nth-child(3n)) {
+            margin-right: calc(10% / 3);
+        }
+
+        &:not(:nth-child(n+4)) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.section-portfolio {
+    padding: 20rem 7rem;
+    max-width: 125rem;
+    margin: 0 auto;
+
+    &__container {
+
+        // max-width: 114rem;
+        // margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        width: 100%;
+        // grid-template-columns: repeat(8, 1fr);
+        // grid-template-rows: repeat(8, 12vw);
+
+        grid-gap: 4rem;
+        // padding: 5rem;
+    }
+
+    &__box {
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 2rem 2rem rgba($color-black, .1);
+        background: $color-grey-dark-3;
+        // background-size: cover;
+        // background-position: center;
+        transition: all .8s ease;
+        
+
+        &--1 {
+            // background-color: orangered;
+            // grid-column: 1 / span 4;
+            // grid-row: 1 / span 2;
+        }
+
+        &--2 {
+            // grid-column: 5 / span 4;
+            // grid-row: 1 / span 2;
+            // background-color: aqua;
+            background: #000;
+        }
+
+        &--3 {
+            // grid-column: 1 / span 3;
+            // grid-row: 3/ span 2;
+            // background-color: yellow;
+        }
+
+        &--4 {
+            // grid-column: 4/ span 5;
+            // grid-row: 3/ span 2;
+            // background-color: #444;
+        }
+
+        &--5 {
+            // grid-column: 1/ span 5;
+            // grid-row: 5/ span 2;
+            // background-color: red;;
+        }
+
+        &--6 {
+            // grid-column: 6/ span 3;
+            // grid-row: 5/ span 2;
+            // background-color: magenta;
+        }
+
+        &--7 {
+            // grid-column: 1/ span 3;
+            // grid-row: 7/ span 2;
+            // background-color:blue;
+        }
+
+        &--8 {
+            // grid-column: 4/ span 5;
+            // grid-row: 7/ span 2;
+            // background-color: skyblue;
+        }
+
+    }
+
+    &__item{
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__item::after {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        // background-image: linear-gradient(270deg, rgba(41, 124, 254, .35), rgba(36, 223, 190, .35)) ;
+        background-image: linear-gradient(135deg,hsl(160, 55%, 45%) , hsl(100, 45%, 55%));
+        opacity: 0;
+        transition: all .6s ease;
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+        transition: all .6s ease;
+    }
+
+    &__caption{
+        background: transparent;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0;
+        visibility: 0;
+        text-align: center;
+        transition: all .6s ease;
+        color: #333;
+
+        &--tech{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 1rem;
+            
+            p{
+                background-color: #fff;
+                border-radius: 10px;
+                text-align: center;
+                padding: .5rem;
+            }
+        }
+
+        &--link{
+            padding: .5rem;
+            margin-top: 5rem;
+            border-radius: 10px;
+        }
+    }
+
+    // &__box:hover &__item::after{
+    //     background: rgba(#000 , .3);
+    // }
+
+    &__box:hover &__img{
+        transform: scale(1.1);
+        filter: blur(4px);
+    }
+
+    &__box:hover &__item::after{
+        // background: linear-gradient(270deg, rgba(41, 124, 254, .35), rgba(36, 223, 190, .35)) ;
+        opacity: .6;
+    }
+
+    &__box:hover &__caption{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.toolbox{
+    display:flex;
+    align-items: center;
+    padding: 9px;
+    background: $color-grey-dark-3;
+}
+
+.dot{
+    border-radius: 100%;
+    margin: .25rem;
+    background-color: #eee;
+    width: 10px;
+    height: 10px;
+}
+
+
+
+.section-book {
+    padding: 15rem 0;
+    background-image: #eff2f7;
+
+    &__container{
+        max-width: 125rem;
+        margin: 0 auto;
+    }
+
+    @include respond(tab-port) {
+        padding:10rem 0;
+    }
+}
+
+.book {
+    background-image: linear-gradient(105deg,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 50%,
+        transparent 50%),
+        url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+    @include respond(tab-land){
+        background-image: linear-gradient(105deg,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 65%,
+        transparent 65%),
+        url(../img/nat-10.jpg);
+    }
+
+    @include respond(tab-port){
+        background-image: linear-gradient(to right,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 100%),
+        url(../img/nat-10.jpg);
+    }
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-land){
+            width: 65%;
+        }
+
+        @include respond(tab-port){
+           width: 100%;
+        }
+
+        @include respond(phone){
+            padding: 4rem;
+        }
+    }
+}
+

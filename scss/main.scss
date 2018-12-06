@@ -2,5 +2,17 @@
 @import "abstract/variables";
 
 @import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "component/button";
+@import "component/profile";
+@import "component/feature-box";
+@import "component/portfolio";
+@import "component/forms";
 
 @import "layout/navigation";
+@import "layout/header";
+@import "layout/footer";
+
+@import "pages/home";
