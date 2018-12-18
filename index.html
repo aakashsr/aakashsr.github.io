@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Maven+Pro|Montserrat:300,400|Nunito+Sans:300,400,700,800|Nunito:300,400,700,800|Open+Sans:300,400|PT+Sans"
-        rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Maven+Pro|Montserrat:300,400|Nunito+Sans:300,400,700,800|Nunito:300,400,700,800|Open+Sans:300,400|PT+Sans"
+        rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet">
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
@@ -26,33 +28,50 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href='#' class='navigation__link'>Home</a></li>
-                <li class="navigation__item"><a href='#' class='navigation__link'>About</a></li>
-                <li class="navigation__item"><a href='#' class='navigation__link'>Portfolio</a></li>
-                <li class="navigation__item"><a href='#' class='navigation__link'>Contact</a></li>
+                <li class="navigation__item"><a href='#header' class='navigation__link'>Home</a></li>
+                <li class="navigation__item"><a href='#section-about' class='navigation__link'>About</a></li>
+                <li class="navigation__item"><a href='#section-portfolio' class='navigation__link'>Portfolio</a></li>
+                <li class="navigation__item"><a href='#section-contact' class='navigation__link'>Contact</a></li>
             </ul>
         </nav> <!-- navigation on top of empty bg-->
     </div>
 
-    <header class='header'>
-        <div class='header__logo-box'>
-            <!-- <img src='img/logo-white.png' class='header__logo' alt='natours-logo'> -->
-        </div>
+    <header class='header' id='header'>
+        <!-- <div class='header__logo-box'>
+            <img src='img/mylogo.png' class='header__logo' alt='natours-logo'>
+        </div> -->
         <div class='header__text-box'>
+            <div class='header__logo-box'>
+                <img src='img/logowithname.png' class='header__logo' alt='natours-logo'>
+            </div>
             <h1 class='heading-primary'>
-                <span class='heading-primary--main'>Ricardo Zanuta</span>
-                <span class='heading-primary--sub'>Designer / Developer</span>
+                <span class='heading-primary--quote'><span class='heading-primary--magical'>Frontend
+                        Developer</span> and</span>
+                <span class='heading-primary--quote'><span class='heading-primary--magical'>Designer</span> from Delhi</span>
+                <p class='paragraph-primary u-margin-top-medium header__about'>Hi there! My name is Aakash Srivastava and I am
+                    passionate about making people to touch more lives by bringing their brands to life.</p>
+                <!-- <span class='heading-primary--sub'>Designer / Developer</span> -->
             </h1>
 
-            <a href='#' class='btn btn--white'>View my work</a>
-
+            <a href='#portfolio' class='btn btn--white u-margin-bottom-big'>View my work</a>
         </div>
+
+
+        <!-- <div class="scroll-down">                  // Will activate if after adding bg to the HEADER
+            <a href='#about' class='#about'>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </div> -->
+
 
     </header>
 
     <main>
-        <section class="section-about">
-            <div class="u-center-text u-margin-bottom-big">
+        <section class="section-about" id='section-about'>
+            <div class="u-center-text u-margin-bottom-small heading-container">
+                <div class='giga-text'>About me</div>
                 <h2 class="heading-secondary">
                     About me
                 </h2>
@@ -64,17 +83,17 @@
                     </div>
                 </div>
                 <div class='section-about__content--text'>
-                    <h3 class="heading-tertiary">Hello!</h3>
-                    <h3 class="heading-tertiary u-margin-bottom-small">I'm Aakash.</h3>
-                    <p class='paragraph'>A 21 year old Front-end Developer / Designer living in Delhi , IN.
-                        My goal is to make the web a better place and so I have chosen to deep dive into Web
+                    <h3 class="heading-tertiary">Hello! <br /> I'm Aakash.</h3>
+                    <p class='paragraph-primary'>A 21 year old Front-end Developer / Designer living in Delhi , IN.
+                        My goal is to make the web a better place and so I have chosen to take a deep dive into Web
                         Development.
                         I love when I feel that I am making people to touch more lives by bringing their brands to life
                         and telling their stories visually.<br />
-                        When I am not working , I love reading great people biographies and other philosophical book to
-                        learn from them and can become better version of myself.
+                        Apart from playing with bold typography and subtle gradients , I love reading great people
+                        biographies and other philosophical book to
+                        get more understanding of this world and myself.
                     </p>
-                    <a href='#' class='btn btn--black'>Get in touch</a>
+                    <a href='mailto:aakashsri.dev@gmail.com' class='btn btn--black u-margin-top-small'>Get in touch</a>
 
                 </div>
             </div>
@@ -82,64 +101,71 @@
 
 
 
-        <section class="section-features">
-            <div class="u-center-text u-margin-bottom-big">
+        <section class="section-features" id='section-features'>
+            <div class="u-center-text u-margin-bottom-small heading-container">
+                <div class='giga-text'>Technical Skills</div>
                 <h2 class="heading-secondary">
                     Technical Skills
                 </h2>
             </div>
+
             <div class="section-features__container">
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="logo-html5"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">HTML</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
+                <div class="section-features__container--1 clearfix">
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="logo-html5"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">HTML</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
+                    </div>
+
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="logo-css3"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">CSS</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
+                    </div>
+
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="logo-javascript"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">JAVASCRIPT</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
                     </div>
                 </div>
 
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="logo-css3"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">CSS</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
-                    </div>
-                </div>
 
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="logo-javascript"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">JAVASCRIPT</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
+                <div class="section-features__container--2 clearfix">
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="logo-sass"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">SASS</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
                     </div>
-                </div>
 
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="logo-sass"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">SASS</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="logo-npm"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">NPM</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
                     </div>
-                </div>
 
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="logo-npm"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">NPM</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
-                    </div>
-                </div>
-
-                <div class="section-features__box">
-                    <div class="feature-box">
-                        <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
-                        <ion-icon class='feature-box__icon' name="git-branch"></ion-icon>
-                        <p class="paragraph u-margin-bottom-small">GIT</p>
-                        <!-- Reusing the 'tertiary-heading' component-->
+                    <div class="section-features__box">
+                        <div class="feature-box">
+                            <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
+                            <ion-icon class='feature-box__icon' name="git-branch"></ion-icon>
+                            <p class="paragraph u-margin-bottom-small">GIT</p>
+                            <!-- Reusing the 'tertiary-heading' component-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,14 +173,15 @@
 
 
 
-        <section class="section-portfolio">
-            <div class="u-center-text u-margin-bottom-big">
+        <section class="section-portfolio" id='section-portfolio'>
+            <div class="u-center-text u-margin-bottom-small  heading-container">
+                <div class='giga-text'>Portfolio</div>
                 <h2 class="heading-secondary">
                     Portfolio
                 </h2>
             </div>
             <div class="section-portfolio__container">
-                <a class="section-portfolio__box section-portfolio__box--1">
+                <a href='https://aakashsr.github.io/Natours/' class="section-portfolio__box section-portfolio__box--1">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
@@ -162,22 +189,7 @@
                     </div>
                     <div class="section-portfolio__item">
                         <img src='img/a.jpg' class='section-portfolio__img' alt='Project Image'>
-                        <!-- <div class="section-portfolio__caption">
-                            <div class='section-portfolio__caption--tech'>
-                                <p>HTML5</p>
-                                <p>CSS3</p>
-                                <p>ANIMATION</p>
-                                <p>SASS</p>
-                            </div> -->
-
-                        <!-- <div class='section-portfolio__caption--link'>
-                                <a href='#'>View Project</a>
-                            </div>   -->
-                        <!-- </div> -->
                     </div>
-                    <!-- <div class="section-portfolio__caption">
-                        <p>Natours</p>
-                    </div> -->
                     <div class="section-portfolio__caption">
                         <div class='section-portfolio__caption--tech'>
                             <p>HTML5</p>
@@ -185,11 +197,13 @@
                             <p>ANIMATION</p>
                             <p>SASS</p>
                         </div>
-                        <button class='section-portfolio__caption--link'>View More</button>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                        <!-- Activate this button after writing readme file of each project in detail.Then this button will open a popup box with with that readme.md file-->
                     </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--2">
+
+                <a href='https://aakashsr.github.io/techdegree-project-1/' class="section-portfolio__box section-portfolio__box--2">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
@@ -198,101 +212,148 @@
                     <div class="section-portfolio__item">
                         <img src='img/b.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>JS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--3">
+
+                <a href='https://aakashsr.github.io/Tic-Tac-Toe/' class="section-portfolio__box section-portfolio__box--3">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
                         <img src='img/cc.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>JS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--4">
+
+                <a href='https://aakashsr.github.io/Trillo/' class="section-portfolio__box section-portfolio__box--4">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
                         <img src='img/dd.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>ANIMATION</p>
+                            <p>SASS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--5">
+
+                <a href='https://aakashsr.github.io/Build-an-Interactive-Form/' class="section-portfolio__box section-portfolio__box--5">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
                         <img src='img/ee.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>JS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--6">
+
+                <a href='https://aakashsr.github.io/Nexter/' href='https://github.com/aakashsr/Nexter' class="section-portfolio__box section-portfolio__box--6">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
                         <img src='img/ff.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>ANIMATION</p>
+                            <p>CSS3 Grid</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--7">
+
+                <a href='https://aakashsr.github.io/Pagination-and-Content-Filter/' class="section-portfolio__box section-portfolio__box--7">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
                         <img src='img/gg.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
-
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>JS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
 
-                <a class="section-portfolio__box section-portfolio__box--8">
+
+                <a href='https://aakashsr.github.io/Aman-Portfolio/' class="section-portfolio__box section-portfolio__box--8">
                     <div class='toolbox'>
                         <div class="dot"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
                     </div>
-                    <!-- This 'feature box' should be a component , a building block that can be resued throughout our page-->
                     <div class="section-portfolio__item">
-                        <img src='img/cc.jpg' class='section-portfolio__img' alt='Project Image'>
+                        <img src='img/hh.jpg' class='section-portfolio__img' alt='Project Image'>
                     </div>
-                    <!-- Reusing the 'tertiary-heading' component-->
+                    <div class="section-portfolio__caption">
+                        <div class='section-portfolio__caption--tech'>
+                            <p>HTML5</p>
+                            <p>CSS3</p>
+                            <p>ANIMATION</p>
+                            <p>SASS</p>
+                        </div>
+                        <!-- <button class='btn-txt'>View More &rarr;</button> -->
+                    </div>
                 </a>
-
             </div>
         </section>
 
 
 
-        <section class="section-book">
-            <div class="u-center-text u-margin-bottom-big">
+        <section class="section-book" id='section-contact'>
+            <div class="u-center-text u-margin-bottom-small heading-container">
+                <div class='giga-text'>Contact</div>
                 <h2 class="heading-secondary">
-                    Contact Me
+                    Contact
                 </h2>
             </div>
             <div class="section-book__container">
@@ -300,41 +361,80 @@
                     <div class="book__form">
                         <form action="#" class="form" autocomplete="off">
                             <div class="u-margin-bottom-medium">
-                                <h4 class="headring-quaternary">
-                                    Ok , let's create something great
+                                <h4 class="heading-quaternary">
+                                    Ok , let's create something great <span class='section-book__dot'>&#46;</span>
                                 </h4>
                             </div>
 
                             <div class="form__group">
-                                <input type="text" class="form__input" placeholder="Full Name" id='name' required>
+                                <input type="text" class="form__input form__input--name" placeholder="Full Name" id='name'
+                                    required>
                                 <label for="name" class="form__label">Full Name</label>
                             </div>
 
                             <div class="form__group">
-                                <input type="email" class="form__input" placeholder="Email address" id='email' required>
+                                <input type="email" class="form__input form__input--email" placeholder="Email address"
+                                    id='email' required>
                                 <label for="email" class="form__label">Email address</label>
                             </div>
 
                             <div class="form__group">
-                                <!-- <div class="form__radio-group u-margin-bottom-small">
-                                    <input type='radio' class='form__radio-input' id='small' name='size'>
-                                    <label for="small" class="form__radio-label">
-                                        <span class='form__radio-button'></span>
-                                        Small tour group</label>
-                                </div> -->
-
-                                <!-- <div class="form__radio-group">
-                                    <input type='radio' class='form__radio-input' id='large' name='size'>
-                                    <label for="large" class="form__radio-label">
-                                        <span class='form__radio-button'></span>
-                                        Large tour group</label>
-                                </div> -->
+                                <textarea class="form__input form__input--message" name="message" placeholder="Message"></textarea>
                             </div>
 
                             <div class='form__group'>
-                                <button class="btn btn--green">Send&rarr;</button>
+                                <button class="btn btn--white u-margin-top-small">Send<ion-icon class='form__button'
+                                        name="send"></ion-icon></button>
                             </div>
                         </form>
+                    </div>
+
+                    <div class='book__info'>
+                        <div class='book__info--container'>
+                            <div class='book__info--iconbox'>
+                                <img src='img/placeholder.png' class='book__info--icon'>
+                            </div>
+                            <div class='book__info--contentbox'>
+                                <div class='book__info--heading'>
+                                    <span class='paragraph-primary'>Address:</span>
+                                </div>
+                                <div class="book__info--text">
+                                    <p class='paragraph-secondary'>Alpha II , Greater Noida</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class='book__info'> -->
+                        <div class='book__info--container'>
+                            <div class='book__info--iconbox'>
+                                <img src='img/paper-plane (1).png' class='book__info--icon'>
+                            </div>
+                            <div class='book__info--contentbox'>
+                                <div class='book__info--heading'>
+                                    <span class='paragraph-primary'>Email:</span>
+                                </div>
+                                <div class="book__info--text">
+                                    <p class='paragraph-secondary'>aakashsri.dev@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
+
+                        <!-- <div class='book__info'> -->
+                        <div class='book__info--container'>
+                            <div class='book__info--iconbox'>
+                                <img src='img/telephone.png' class='book__info--icon'>
+                            </div>
+                            <div class='book__info--contentbox'>
+                                <div class='book__info--heading'>
+                                    <span class='paragraph-primary'>Phone</span>
+                                </div>
+                                <div class="book__info--text">
+                                    <p class='paragraph-secondary'>+919643637548</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>
@@ -347,21 +447,23 @@
             <div class='footer__container'>
                 <div class="footer__navigation">
                     <ul class="footer__list">
-                        <li class="footer__item"><a href='#' class='footer__link paragraph-secondary'>Github</a></li>
-                        <li class="footer__item"><a href='#' class='footer__link paragraph-secondary'>Linkedin</a></li>
-                        <li class="footer__item"><a href='#' class='footer__link paragraph-secondary'>Instagram</a></li>
-                        <li class="footer__item"><a href='#' class='footer__link paragraph-secondary'>Twitter</a></li>
+                        <li class="footer__item"><a href='https://github.com/aakashsr' class='footer__link paragraph-tertiary'>Github</a></li>
+                        <li class="footer__item"><a href='https://www.linkedin.com/in/aakash-srivastava-a17648136/?originalSubdomain=in' class='footer__link paragraph-tertiary'>Linkedin</a></li>
+                        <li class="footer__item"><a href='https://www.instagram.com/aakash_code/' class='footer__link paragraph-tertiary'>Instagram</a></li>
+                        <li class="footer__item"><a href='https://twitter.com/AakashS79824816' class='footer__link paragraph-tertiary'>Twitter</a></li>
                     </ul>
                 </div>
                 <div class='footer__copyright'>
-                    <p class='paragraph paragraph-secondary'>Handcrafted with <i class="em em-heart"></i> by Aakash Srivastava</p>
-                    <p class='paragraph paragraph-secondary'>All right reserved &copy; 2018</p>
+                    <p class='paragraph'>Handcrafted with <i class="em em-heart"></i>
+                        by Aakash
+                        Srivastava</p>
+                    <p class='paragraph'>All right reserved &copy; 2018</p>
                 </div>
             </div>
         </footer>
     </main>
 
-    <!-- <script src="main.js"></script> -->
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
 </body>
 

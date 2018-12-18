@@ -1,39 +1,90 @@
 .header {
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Nunito', sans-serif;
     position: relative;
     height: 100vh;
+    background: linear-gradient(45deg, rgba(255, 175, 189, .7), rgba(100, 216, 243, .7), rgba(234, 236, 198, .7),
+        rgba(245, 146, 176, .7), rgba(52, 219, 216, .7)) 0 0 / 1000% no-repeat,
+        url(https://picsum.photos/g/2000/1200?image=443) 0 0 / cover no-repeat;
+    -webkit-animation: gradientAnimation 40s ease infinite;
+    animation: gradientAnimation 40s ease infinite;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100vh);
+    clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100vh);
+    background-position: top;
 
-    // background-image: linear-gradient(to right bottom,
-    //     rgba($color-primary-light, 0.803),
-    //     rgba($color-primary-dark, 0.803)),
-    //     url('../img/hero.jpg');
-    background: #1c1d25;
-    background-size: cover;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    // @include respond(phone) {
+    //     -webkit-clip-path: polygon(0 0, 100% 0, 100% 95vh, 50% 100vh, 0 95vh);
+    //     clip-path: polygon(0 0, 100% 0, 100% 95vh, 50% 100vh, 0 95vh);
 
-    @include respond(phone) {
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    &:target .navigation__nav {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
     }
-    
+
+    &:target .navigation__background {
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+
     &__logo-box {
-        position: absolute;
-        top: 4rem;
-        left: 4rem;
+        margin: .5rem;
     }
 
     &__logo {
-        height: 3.5rem;
+        width: 7rem;
+
+        @include respond(phone) {
+            width: 5rem;
+        }
     }
 
     &__text-box {
         width: 80%;
         position: absolute;
-        top: 40%;
         left: 50%;
-        transform: translate(-50%, -50%);
         text-align: left;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 3rem 0;
+        transform: translateX(-50%);
+        height: 100vh;
+
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        bottom: 0;
+        animation: bouncing 1.5s infinite ease-in-out;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &__about {
+        font-weight: 600;
+        max-width: 60rem;
+        padding: 1rem;
+
+        @include respond(tab-land) {
+            max-width: 50rem;
+        }
+
+        @include respond(tab-port) {
+            max-width: 70rem;
+        }
+
+        @include respond(phone) {
+            width: 95%;
+            font-weight: 400;
+        }
     }
 
 }

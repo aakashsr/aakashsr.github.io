@@ -1,7 +1,7 @@
 body {
     /* We define font definitions within the body tag because it will be inherited by it's child element
     /* We define 'font-family' in body element and not '*' because the properties related to font are usually inherited */
-    font-family: 'Nunito', sans-serif;
+    font-family: 'nunito', sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
     /* font-size: 16px; */
@@ -11,15 +11,15 @@ body {
 }
 
 .heading-primary {
-    color: $color-white;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
+    color: $color-grey-dark-3;
 
     &--main {
         display: block;
-        font-size: 7rem;
-        letter-spacing: 2rem;
-        font-weight: 400;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-weight: 900;
+        margin-bottom: 3rem;
+        line-height: 1.8;
 
         @include respond(phone) {
             font-size: 5rem;
@@ -30,7 +30,7 @@ body {
     &--sub {
         display: block;
         font-size: 3rem;
-        letter-spacing: 1rem;
+        letter-spacing: 2px;
         font-weight: 700;
 
         @include respond(phone) {
@@ -38,23 +38,59 @@ body {
             font-weight: 400;
         }
     }
+
+    &--quote {
+        display: block;
+        font-size: 3.5rem;
+        font-weight: 600;
+        text-transform: none;
+        margin-bottom: 1rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    &--magical {
+        display: inline-block;
+        padding: .5rem 1rem;
+        position: relative;
+        font-size: 3.5rem;
+        word-spacing: 1.2rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    &--magical::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        background: linear-gradient(135deg, #18ecc0, #18ec8b);
+
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        right: 0;
+        display: inline-block;
+        padding: 1rem;
+    }
 }
 
 
 .heading-secondary {
+    position: absolute;
+    transform: translate(-50%, -50%);
     text-transform: capitalize;
     font-size: 5rem;
     font-weight: 700;
-    display: inline-block;
-    // color: $color-grey-dark-3;
     letter-spacing: 2px;
     transition: all .2s;
+    z-index: 1;
 
-    background-image: linear-gradient(270deg, #297cfe 0, #24dfbe 100%);
+    color: #18ecc0;
     display: inline-block;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 
     @include respond(tab-port) {
         font-size: 3rem;
@@ -63,11 +99,6 @@ body {
     @include respond(phone) {
         font-size: 2.5rem;
     }
-
-    &:hover {
-        transform: skewY(2deg) skewX(15deg) scale(1.1);
-        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
-    }
 }
 
 .heading-tertiary {
@@ -75,17 +106,36 @@ body {
     font-size: 6rem;
     font-weight: 700;
     line-height: 1.1;
-    // text-transform: uppercase;
     color: $color-grey-dark-3;
+
+    @include respond(tab-land) {
+        font-size: 5rem;
+    }
+
+    @include respond(tab-land) {
+        margin-bottom: 2rem;
+    }
+
 }
 
-.headring-quaternary {
-    font-family: 'Nunito Sans', sans-serif;
+.heading-quaternary {
+    font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
-    // text-transform: uppercase;
     color: $color-grey-dark-3;
+
+    text-shadow: 0px 4px 3px rgba(24, 236, 192, .4),
+        0px 8px 13px rgba(24, 236, 192, .1),
+        0px 18px 23px rgba(24, 236, 192, .1);
+
+    @include respond(tab-port) {
+        font-size: 3.45rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.8rem;
+    }
 }
 
 .paragraph {
@@ -96,9 +146,34 @@ body {
 
     &-primary {
         font-size: 2.1rem;
+        color: $color-grey-dark-3;
+
+        @include respond(tab-land) {
+            font-size: 1.8rem;
+        }
+
+        @include respond(tab-port) {
+            font-size: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        @include respond(phone) {
+            font-size: 2.15rem;
+            font-weight: 300;
+        }
     }
 
     &-secondary {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+
+        @include respond(phone) {
+            font-size: 2.15rem;
+        }
+    }
+
+    &-tertiary {
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-transform: capitalize;
     }
 }

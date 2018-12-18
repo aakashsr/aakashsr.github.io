@@ -1,6 +1,6 @@
 .form {
     &__group:not(:last-child) {
-        margin-bottom: 2rem;
+        margin-bottom: .5rem;
     }
 
     &__input {
@@ -14,19 +14,26 @@
         border-bottom: 3px solid transparent;
         display: block;
         width: 90%;
+        background: #e6e6e6;
+        border-radius: 10px;
 
-        @include respond(tab-port){
+
+        &--message {
+            min-height: 15rem;
+        }
+
+        @include respond(tab-port) {
             width: 100%;
         }
 
         &:focus {
             outline: none;
             background-origin: 0 1rem 2rem rgba($color-black, .1);
-            border-bottom: 3px solid $color-primary;
+            border-bottom: 3px solid #18ecc0;
         }
 
-        &:focus:invalid{
-            border-bottom: 3px solid $color-secondary-dark;
+        &:focus:invalid {
+            border-bottom: 3px solid;
         }
 
         &::-webkit-input-placeholder {
@@ -44,10 +51,15 @@
         transition: all .3s;
     }
 
-    &__input:placeholder-shown ~ &__label{
+    &__input:placeholder-shown~&__label {
         transform: translateY(-4rem);
         visibility: hidden;
         opacity: 0;
+    }
+
+    &__button {
+        font-size: 12px;
+        padding-left: .5rem;
     }
 
 }

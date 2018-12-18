@@ -23,10 +23,28 @@
     }
 }
 
+.u-margin-top-small{
+    margin-top: 2rem !important;
+}
+
+.u-margin-top-medium{
+    margin-top: 6rem !important;
+}
+
 .u-margin-top-big {
     margin-top: 8rem !important;
 }
 
 .u-margin-top-huge {
     margin-top: 10rem !important;
+}
+
+.heading-container{
+    height: 6rem;
+    position: relative;
+    margin-top: -8vh;
+
+    @include respond(phone){
+        height: 3rem;
+    }
 }

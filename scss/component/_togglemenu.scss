@@ -1,0 +1,15 @@
+.open {
+    & {
+        background-color: transparent !important;
+
+        &::before {
+            top: 0 !important;
+            transform: rotate(135deg);
+        }
+
+        &::after {
+            top: 0 !important;
+            transform: rotate(-135deg) !important;
+        }
+    }
+}

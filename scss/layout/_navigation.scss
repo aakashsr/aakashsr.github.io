@@ -1,5 +1,4 @@
 .navigation {
-    font-family: 'Fjalla One', sans-serif;
 
     &__checkbox {
         display: none;
@@ -40,7 +39,7 @@
         z-index: -1;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.61, 0.92, 0.68, 1.14) 0s;
+        transition: all 0.8s cubic-bezier(0.61, 0.92, 0.68, 1.14) 0s;
     }
 
     &__nav {
@@ -61,65 +60,52 @@
         transform: translate(-50%, -50%);
         list-style: none;
         text-align: center;
-        padding-left: 6rem;
     }
 
     &__item {
         margin: 1rem;
+        position: relative;
+    }
+
+    &__item:hover &__item::after {
+        width: 100%;
     }
 
     &__link {
-        display: inline-block;
+        // display: inline-block;
         opacity: 0;
         font-size: 5rem;
         font-weight: 300;
         padding: 1rem 2rem;
-        color: #1c1d25;
-        text-decoration: none;
+        // color: #00c9b7;
+        color: #18ecc0;
         text-transform: uppercase;
+        text-decoration: none;
+        transition: all .3s ease;
 
-        span{
+        span {
             padding-right: 3rem;
+        }
+
+        @include respond(phone) {
+            font-size: 4rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            transform: scale(0);
+            transition: all .3s ease;
+            background: #18ecc0;
         }
     }
 
-
-    // FUNCTIONALITY
-
-    &__checkbox:checked~&__background {
-        opacity: 1;
-        visibility: visible;
-        z-index: 1000;
-    }
-
-    &__checkbox:checked~&__nav {
-        height: 100vh;
-        opacity: 1;
-        visibility: visible;
-    }
-
-    &__checkbox:checked~&__nav &__link{
-        opacity: 1;
-    }
-
-    &__checkbox:checked~&__nav &__list &__item:nth-of-type(1) a {
-        transition-delay: 0.4s;
-    }
-
-    &__checkbox:checked~&__nav &__list &__item:nth-of-type(2) a {
-        transition-delay: 0.45s;
-    }
-
-    &__checkbox:checked~&__nav &__list &__item:nth-of-type(3) a {
-        transition-delay: 0.5s;
-    }
-
-    &__checkbox:checked~&__nav &__list &__item:nth-of-type(4) a {
-        transition-delay: 0.55s;
-    }
-
-    &__checkbox:checked~&__nav &__list &__item:nth-of-type(5) a {
-        transition-delay: 0.6s;
+    &__link:hover::after {
+        transform: scale(1);
     }
 
     // ICON
@@ -128,7 +114,7 @@
         position: relative;
         margin-top: 3.5rem;
 
-        @include respond(phone){
+        @include respond(phone) {
             margin-top: 2.5rem;
         }
 
@@ -140,7 +126,7 @@
             background-color: $color-grey-dark-3;
             display: inline-block;
 
-            @include respond(phone){
+            @include respond(phone) {
                 width: 2rem;
                 height: 1.5px;
             }
@@ -155,11 +141,10 @@
 
         }
 
-
         &:before {
             top: -8px;
 
-            @include respond(phone){
+            @include respond(phone) {
                 top: -7px;
             }
 
@@ -167,7 +152,8 @@
 
         &:after {
             top: 8px;
-            @include respond(phone){
+
+            @include respond(phone) {
                 top: 7px;
             }
         }
@@ -179,19 +165,5 @@
 
     &__button:hover &__icon::after {
         top: 10px;
-    }
-
-    &__checkbox:checked+&__button &__icon {
-        background-color: transparent;
-    }
-
-    &__checkbox:checked+&__button &__icon::before {
-        top: 0;
-        transform: rotate(135deg);
-    }
-
-    &__checkbox:checked+&__button &__icon::after {
-        top: 0;
-        transform: rotate(-135deg);
     }
 }
