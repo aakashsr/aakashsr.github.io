@@ -5,6 +5,9 @@ const nav_link = document.querySelectorAll('.navigation__link');
 const nav_button = document.querySelector('.navigation__button');
 const nav_icon = document.querySelector('.navigation__icon');
 const nav_list = document.querySelector('.navigation__list');
+const label = document.querySelectorAll('.form__label');
+const textarea = document.querySelector('.form__input--message');
+const formName = document.querySelector('.form__input--name');
 
 
 nav_button.addEventListener('click', () => {
@@ -18,7 +21,6 @@ nav_button.addEventListener('click', () => {
         for (let i = 0; i < nav_link.length; i++) {
             nav_link[i].style.opacity = '1';
         }
-        console.log('hurray....1 block runs');
     } else {
         nav_bg.style.visibility == 'hidden';
         nav_bg.style.opacity = '0';
@@ -28,7 +30,6 @@ nav_button.addEventListener('click', () => {
         for (let i = 0; i < nav_link.length; i++) {
             nav_link[i].style.opacity = '0';
         }
-        console.log('hurray....2 block runs');
     }
 
     if(nav_icon.classList.contains('open')){
@@ -36,7 +37,6 @@ nav_button.addEventListener('click', () => {
     } else{
         nav_icon.classList.add('open');
     }
-    console.log('hurray....2.5 block runs');
 });
 
 nav_list.addEventListener('click', (e) => {
@@ -53,20 +53,20 @@ nav_list.addEventListener('click', (e) => {
             nav_link[i].style.opacity = '0';
         }
         nav_icon.classList.remove('open');
-        console.log('hurray....3 block runs');
     }
 });
 
-// for(let i = 0; i < nav_link.length; i++) { 
-//     nav_link[i].addEventListener('click' , function(){
-//         nav_nav.style.visibility = 'hidden';
-//         nav_nav.style.opacity = '0';
-//         nav_bg.style.visibility = 'hidden';
-//         nav_bg.style.opacity = '0';
-//     });
-//     console.log('Hello');
-// }
-// console.log('Hello');
-// console.log(nav_link);
-// console.log(nav_nav);
-// console.log(nav_bg);
+var message = "";
+
+$("#sendMessage").on("click", function() {
+    message = $(".form").serialize();
+    $.ajax({
+        url: "//formspree.io/aakashsri.dev@gmail.com", 
+        method: "POST",
+        data: {message: message},
+        dataType: "json"
+    });
+    textarea.value = "";
+    alert('Thanks for the email, we\'ll be in touch promptly.');
+    return false;
+});

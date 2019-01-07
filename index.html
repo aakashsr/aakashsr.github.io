@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -48,7 +48,8 @@
                 <span class='heading-primary--quote'><span class='heading-primary--magical'>Frontend
                         Developer</span> and</span>
                 <span class='heading-primary--quote'><span class='heading-primary--magical'>Designer</span> from Delhi</span>
-                <p class='paragraph-primary u-margin-top-medium header__about'>Hi there! My name is Aakash Srivastava and I am
+                <p class='paragraph-primary u-margin-top-medium header__about'>Hi there! My name is Aakash Srivastava
+                    and I am
                     passionate about making people to touch more lives by bringing their brands to life.</p>
                 <!-- <span class='heading-primary--sub'>Designer / Developer</span> -->
             </h1>
@@ -359,7 +360,8 @@
             <div class="section-book__container">
                 <div class="book">
                     <div class="book__form">
-                        <form action="#" class="form" autocomplete="off">
+                        <form method="POST" class="form"
+                            autocomplete="off">
                             <div class="u-margin-bottom-medium">
                                 <h4 class="heading-quaternary">
                                     Ok , let's create something great <span class='section-book__dot'>&#46;</span>
@@ -367,23 +369,31 @@
                             </div>
 
                             <div class="form__group">
-                                <input type="text" class="form__input form__input--name" placeholder="Full Name" id='name'
-                                    required>
+                                <input type="text" name='name' class="form__input form__input--name" placeholder="Full Name"
+                                    id='name' required>
                                 <label for="name" class="form__label">Full Name</label>
                             </div>
 
                             <div class="form__group">
-                                <input type="email" class="form__input form__input--email" placeholder="Email address"
+                                <input type="email" name='email' class="form__input form__input--email" placeholder="Email address"
                                     id='email' required>
                                 <label for="email" class="form__label">Email address</label>
+                            </div>
+
+                            <div class="form__group">
+                                <input type="hidden" name="_subject" value="Website contact" />
                             </div>
 
                             <div class="form__group">
                                 <textarea class="form__input form__input--message" name="message" placeholder="Message"></textarea>
                             </div>
 
+                             <div class="form__group">
+                                <input type="text" name="_gotcha" style="display:none" />
+                            </div>
+
                             <div class='form__group'>
-                                <button class="btn btn--white u-margin-top-small">Send<ion-icon class='form__button'
+                                <button class="btn btn--white u-margin-top-small" id="sendMessage">Send<ion-icon class='form__button'
                                         name="send"></ion-icon></button>
                             </div>
                         </form>
@@ -448,7 +458,8 @@
                 <div class="footer__navigation">
                     <ul class="footer__list">
                         <li class="footer__item"><a href='https://github.com/aakashsr' class='footer__link paragraph-tertiary'>Github</a></li>
-                        <li class="footer__item"><a href='https://www.linkedin.com/in/aakash-srivastava-a17648136/?originalSubdomain=in' class='footer__link paragraph-tertiary'>Linkedin</a></li>
+                        <li class="footer__item"><a href='https://www.linkedin.com/in/aakash-srivastava-a17648136/?originalSubdomain=in'
+                                class='footer__link paragraph-tertiary'>Linkedin</a></li>
                         <li class="footer__item"><a href='https://www.instagram.com/aakash_code/' class='footer__link paragraph-tertiary'>Instagram</a></li>
                         <li class="footer__item"><a href='https://twitter.com/AakashS79824816' class='footer__link paragraph-tertiary'>Twitter</a></li>
                     </ul>
@@ -462,7 +473,7 @@
             </div>
         </footer>
     </main>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/ionicons@4.4.8/dist/ionicons.js"></script>
 </body>
