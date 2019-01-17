@@ -56,17 +56,41 @@ nav_list.addEventListener('click', (e) => {
     }
 });
 
-var message = "";
 
-$("#sendMessage").on("click", function() {
-    message = $(".form").serialize();
-    $.ajax({
-        url: "//formspree.io/aakashsri.dev@gmail.com", 
-        method: "POST",
-        data: {message: message},
-        dataType: "json"
-    });
-    textarea.value = "";
-    alert('Thanks for the email, we\'ll be in touch promptly.');
-    return false;
-});
+
+$('#contactForm').submit(function(event){
+    event.preventDefault();
+
+    const name = $('#name');
+    const email = $('#email');
+    const message = $('#message');
+
+    console.log(name,email,message);
+
+    if(name && email && message){
+
+     $.ajax({
+            url: "https://quiet-dawn-31629.herokuapp.com/api/form", 
+            method: "POST",
+            data: {
+                name : name.val(),
+                email : email.val(),
+                message: message.val()
+            },
+            success : function(result){
+                if(result == 'OK'){
+                    alert('I have received your message. I\'ll reply as soon as possible.');
+                    name.val('');
+                    email.val('');
+                    message.val('');
+                }
+            },
+            error : function( jqXhr, textStatus, errorThrown ){
+                alert('Ooops, something wrong! Please check again later!');
+            }
+        });
+
+    }
+
+
+})
