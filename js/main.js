@@ -70,7 +70,7 @@ $('#contactForm').submit(function(event){
     if(name && email && message){
 
      $.ajax({
-            url: "https://quiet-dawn-31629.herokuapp.com/api/form", 
+            url: "https://afternoon-sands-81292.herokuapp.com/api/form", 
             method: "POST",
             data: {
                 name : name.val(),
