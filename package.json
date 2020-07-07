@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/aakashsr/Portfolio#readme",
   "dependencies": {
-    "npm": "^6.13.4"
+    "npm": "^6.14.6"
   },
   "devDependencies": {
     "autoprefixer": "^9.4.3",
